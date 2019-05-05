@@ -8,4 +8,3 @@ client/node_modules/
 # ignore uploads folder
 uploads/
 
-.DS_Store
