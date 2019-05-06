@@ -11,7 +11,7 @@ class Team extends Sequelize.Model{}
             type: Sequelize.STRING,
             allowNull: false
                 },
-        logo:{
+        logoUrl:{
             type: Sequelize.STRING,
             allowNull: false
                 }

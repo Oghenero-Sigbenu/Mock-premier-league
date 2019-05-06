@@ -1,5 +1,5 @@
 const Fixtures = require("../models/fixtures");
-const Admin = require("../modelsuser");
+// const Admin = require("../modelsuser");
 
 //creating fixtures
 exports.createFixtures = (req, res, next) => {

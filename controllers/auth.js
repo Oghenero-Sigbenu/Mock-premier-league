@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 const Role = require("../controllers/role")
 
 const User = require("../models/user");
-const Admin = require("../models/admin");
+// const Admin = require("../models/admin");
 
 exports.postLogin = (req, res, next) => {
     const {

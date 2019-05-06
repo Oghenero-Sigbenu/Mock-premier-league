@@ -19,7 +19,12 @@ const Sequelize = require("../backend-developers-test/config/database");
 
 const app = express();
 
+// This parses all json request so we can access
+// its contents via 'req.body' object
 app.use(express.json());
+
+// Create a static directory for our uploads
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // routes
 app.use("/api/v1/user", userRoutes);

@@ -1,24 +1,26 @@
-const express = require("express");
 const Team = require("../models/team");
-const Admin = require("../models/admin");
 
 //create team
 exports.createTeam = (req, res, next) => {
-    const { teamName, code, logo} = req.body;
-
-    if(!teamName || !code || !logo) {
+    const { teamName, code, logoUrl} = req.body;
+    // let logoUrl = "";
+	if(!teamName || !code) {
         return res.status(400).json({msg: "All fields are required"})
-    }
+    }else{ if(req.file) {
+		logoUrl = req.file.path;
+	}
+    
+    console.log(logoUrl)
     Team.create({
                 teamName,
                 code,
-                logo
+                logoUrl
             })
     .then(team => {
     res.json(team)
     })
     .catch(err => res.json({msg: "Team creation failed", err}))
-
+    }
 }
 
 //view all team 
