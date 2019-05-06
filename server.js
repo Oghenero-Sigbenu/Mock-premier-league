@@ -1,3 +1,4 @@
+var PORT = process.env.PORT || 3000;
 require("dotenv").config(); // allows our project read variables from .env files
 const path = require("path");
 const express = require("express");
