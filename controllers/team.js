@@ -33,6 +33,8 @@ exports.getAllTeam = (req, res, next) => {
             return res.json({msg : err.message || "Error occured"})
         })
 }
+
+
 //deleting a team
 exports.deleteTeam = (req, res, next) => {
     const teamId =  req.params.id;
@@ -47,7 +49,7 @@ exports.deleteTeam = (req, res, next) => {
         .catch(err => {
             res.json({ success: false, message: "This Recipe doesnt exists" })
 
-        })
+})
 }
 
 //editing a team
