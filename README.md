@@ -26,4 +26,11 @@ POST - localhost:3000/api/v1/fixtures/all : This Creates a new fixture.
 PUT -localhost:3000/api/v1/fixtures/update/:id : Updates existing fixture with new data.                 
 DELETE -localhost:3000/api/v1/fixtures/deletes/:id  : Deletes existing fixture from the database.                   
 
+## Installation
+Simply use the following commands:
 
+npm install
+
+npm start
+
+Visit localhost:3000/api/v1 throught you browser.
