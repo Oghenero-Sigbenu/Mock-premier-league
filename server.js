@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 
 
 //Database ORM for NodeJs
-const Sequelize = require("../backend-developers-test/config/database");
+const Sequelize = require("./config/database");
 
 // //models
  const userModel = require("./models/user");
@@ -32,7 +32,9 @@ app.use("/api/v1/user", userRoutes);
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/team", teamRoutes);
 app.use("/api/v1/fixture", fixtureRoutes);
-
+app.use("/", (req, res, next)=> {
+    res.send("<h2>Wlcome to Mock Premiere League</h2>")
+})
 app.use((req, res, next)=> {
     res.send("<h2> Page Not Found </h2>");   
 });

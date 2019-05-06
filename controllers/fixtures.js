@@ -43,7 +43,7 @@ exports.editFixtures = (req, res, next) => {
 //delete fixtures
 exports.deleteFixtures = (req, res, next) => {
     const fixtureId =  req.params.id;
-    Team.findByPk(fixtureId) 
+    Fixture.findByPk(fixtureId) 
         .then(fixture => {
             fixture.destroy()
             .then(() =>{
@@ -57,3 +57,11 @@ exports.deleteFixtures = (req, res, next) => {
         })
 }
 
+//View all fixtures
+exports.getAllFixtures = (req, res, next) => {
+    Fixture.findAll()
+        .then(fixture => {
+            res.json(fixture)
+        })
+        .catch(err => res.json({ msg: err.message || "Error occured" }))
+}
